@@ -179,7 +179,7 @@ class KPrototypes_plus:
     and numerical data
 
     Attributes:
-        data: a 2-D numpy array
+        X: a 2-D numpy array
         n_clusters: the number of clusters
         n_init: the number of parallel oprations by using different initializations
         gamma (optional) : A value that controls how algorithm favours categorical variables.
