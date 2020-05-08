@@ -1,11 +1,11 @@
-# KPrototype plus
+# KPrototype plus (kpplus)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity) [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/) [![PyPI license](https://img.shields.io/pypi/l/ansicolortags.svg)](https://pypi.python.org/pypi/ansicolortags/)
 
 ## Description
 
 K-prototype is a clustering method invented to support both categorical and numerical variables[1]
 
-**KPrototype plus** is a Python 3 package that is designed to increase the performance of [nivoc's KPrototypes function](https://github.com/nicodv/kmodes) by using [Numba](http://numba.pydata.org/).
+**KPrototype plus (kpplus)** is a Python 3 package that is designed to increase the performance of [nivoc's KPrototypes function](https://github.com/nicodv/kmodes) by using [Numba](http://numba.pydata.org/).
 
 This code is part of [Stockholms diabetespreventiva program](https://www.folkhalsoguiden.se/amnesomraden1/analys-och-kartlaggning/sdpp/).
 
@@ -51,13 +51,9 @@ model.cost_                            #return the costs
 
 **n_init:** the number of parallel oprations by using different initializations
 
-**gamma (optional):** A value that controls how algorithm favours categorical variables.
+**gamma (optional):** A value that controls how algorithm favours categorical variables. (By default, it is the mean std of all numeric variables)
 
-By default, it is the mean std of all numeric variables
-
-**n_jobs (optional, default=-1):** The number of parallel processors:
-
-'-1' means using all the processor
+**n_jobs (optional, default=-1):** The number of parallel processors. ('-1' means using all the processor)
 
 **X:** 2-D numpy array (dataset)
 
