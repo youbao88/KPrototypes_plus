@@ -1,5 +1,5 @@
 # KPrototype plus (kpplus)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity) [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/) [![PyPI license](https://img.shields.io/pypi/l/ansicolortags.svg)](https://pypi.python.org/pypi/ansicolortags/)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-informational.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity) [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/) [![PyPI license](https://img.shields.io/pypi/l/ansicolortags.svg)](https://pypi.org/project/kpplus/)
 
 ## Description
 
@@ -28,7 +28,7 @@ Wall time: 13.4 s
 **Notice:** Only Cao initiation is supported as the initiation method[2].
 
 ## System requirement
-[![Generic badge](https://img.shields.io/badge/Python-3.7.1-green.svg)](https://www.python.org/) [![Generic badge](https://img.shields.io/badge/Pandas-0.25.3-green.svg)](https://pandas.pydata.org/) [![Generic badge](https://img.shields.io/badge/Numpy-1.17.0-green.svg)](https://numpy.org/) [![Generic badge](https://img.shields.io/badge/Joblib-0.13.2-green.svg)](https://joblib.readthedocs.io/en/latest/) [![Generic badge](https://img.shields.io/badge/Numba-0.45.1-green.svg)](http://numba.pydata.org/)
+[![Generic badge](https://img.shields.io/badge/Python-3.7.1-informational.svg)](https://www.python.org/) [![Generic badge](https://img.shields.io/badge/Pandas-0.25.3-informational.svg)](https://pandas.pydata.org/) [![Generic badge](https://img.shields.io/badge/Numpy-1.17.0-informational.svg)](https://numpy.org/) [![Generic badge](https://img.shields.io/badge/Joblib-0.13.2-informational.svg)](https://joblib.readthedocs.io/en/latest/) [![Generic badge](https://img.shields.io/badge/Numba-0.45.1-informational.svg)](http://numba.pydata.org/)
 
 ## Installiation
 
