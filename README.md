@@ -66,7 +66,7 @@ By default, it is the mean std of all numeric variables
 For example: ```types = [1,1,0,0,0,0]``` means the first two variables are categorical and the last four variables are numerical.
 
 ## Acknowledgement
-I'm extremely grateful to [Dr. Diego Yacaman Mendez](https://staff.ki.se/people/dieyac?_ga=2.70810192.1199119869.1588953123-1873461028.1579027503) and [Dr. David Ebbevi](https://www.linkedin.com/in/debbevi/?originalSubdomain=se) for their support. They are two brilliant researchers who started this project.
+I'm extremely grateful to [Dr. Diego Yacaman Mendez](https://staff.ki.se/people/dieyac?_ga=2.70810192.1199119869.1588953123-1873461028.1579027503) and [Dr. David Ebbevi](https://www.linkedin.com/in/debbevi/?originalSubdomain=se) for their support. They are two brilliant researchers who started this project with excellent knowledge of medical science, epidemiology, statistics and programming.
 
 ## Reference
 [1] Huang Z. Extensions to the k-Means Algorithm for Clustering Large Data Sets with Categorical Values. Data Mining and Knowledge Discovery. 1998;2(3):283-304.
