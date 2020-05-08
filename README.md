@@ -11,7 +11,7 @@ K-prototype is a clustering method invented to support both categorical and nume
 This code is part of [Stockholms diabetespreventiva program](https://www.folkhalsoguiden.se/amnesomraden1/analys-och-kartlaggning/sdpp/).
 
 **Performance improvement**
-As an [example]('example/example.ipynb'), I used one of the [Heart Disease Data Sets](https://archive.ics.uci.edu/ml/datasets/Heart+Disease) from [UCI](https://archive.ics.uci.edu/ml/index.php) to test the performance.
+As an [example](example/example.ipynb), I used one of the [Heart Disease Data Sets](https://archive.ics.uci.edu/ml/datasets/Heart+Disease) from [UCI](https://archive.ics.uci.edu/ml/index.php) to test the performance.
 This data set contains 4455 rows, 7 categorical variables, and 5 numerical variables.
 We compare the performance between nicodv's kprototype function and k_prototype_plus.
 
