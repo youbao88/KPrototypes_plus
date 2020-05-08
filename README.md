@@ -38,7 +38,7 @@ pip install kpplus
 
 ## Usage
 ```python
-from KPrototypes_plus import KPrototypes_plus
+from kpplus import KPrototypes_plus
 model = KPrototypes_plus(n_clusters = 3, n_init = 4, gamma = None, n_jobs = -1)  #initialize the model
 model.fit_predict(X=df, categorical = [0,1])  #fit the data and categorical into the mdoel
 
