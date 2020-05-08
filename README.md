@@ -48,13 +48,21 @@ model.n_iter_                          #return the number of iterations
 model.cost_                            #return the costs
 ```
 **n_clusters:** the number of clusters
+
 **n_init:** the number of parallel oprations by using different initializations
-**gamma (optional):** A value that controls how algorithm favours categorical variables. 
+
+**gamma (optional):** A value that controls how algorithm favours categorical variables.
+
 By default, it is the mean std of all numeric variables
+
 **n_jobs (optional, default=-1):** The number of parallel processors:
+
 '-1' means using all the processor
+
 **X:** 2-D numpy array (dataset)
+
 **types:** A numpy array that indicates if the variable is categorical or numerical.
+
 For example: ```types = [1,1,0,0,0,0]``` means the first two variables are categorical and the last four variables are numerical.
 
 ## Acknowledgement
