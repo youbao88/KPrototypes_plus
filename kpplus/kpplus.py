@@ -179,7 +179,7 @@ class KPrototypes_plus:
     and numerical data
 
     Attributes:
-        X: a 2-D numpy array
+        X: pandas dataframe
         n_clusters: the number of clusters
         n_init: the number of parallel oprations by using different initializations
         gamma (optional) : A value that controls how algorithm favours categorical variables.
@@ -215,13 +215,23 @@ class KPrototypes_plus:
     '''
 
     def __init__(self, n_clusters, n_init, gamma = None, n_jobs=-1):
+
+        if not isinstance(n_clusters, int):
+            raise TypeError('An value of type int is expected for n_clusters, not %s'%type(n_clusters))
+        if not isinstance(n_init, int):
+            raise TypeError('An value of type int is expected for n_init, not %s'%type(n_init))
+        if gamma and not isinstance(gamma, (int,float)):
+            raise TypeError('An value of type int or float is expected for gamma, not %s'%type(gamma))
+        if not isinstance(n_jobs, int):
+            raise TypeError('An value of type int or float is expected for n_jobs, not %s'%type(n_jobs))
+
         self.n_clusters = n_clusters
         self.n_init = n_init
         self.gamma = gamma
         self.n_jobs = n_jobs
-    
+
     def predict(self):
-        cat_data = self.data[:,self.types == 1].astype(np.int64)
+        cat_data = self.data[:,self.types == 1].astype('int64')
         cat_init = cao_initialization(cat_data, self.n_clusters)
         num_data = self.data[:,self.types == 0]
         num_init = num_initialization(num_data, self.n_clusters)
@@ -230,14 +240,34 @@ class KPrototypes_plus:
         return output
 
     def fit_predict(self, X, categorical):
+
+        if not isinstance(X, pd.DataFrame):
+            raise TypeError('An value of type pd.DataFrame is expected for X, not %s'%type(X))
+        if not isinstance(categorical, list):
+            raise TypeError('An value of type List is expected for categorical, not %s'%type(categorical))
+        
+        self.types = np.array([1 if x in categorical else 0 for x in range(X.shape[1])])
+
+        #Factorize categorical data:
+        factorize_unique = {}
+        for column in categorical:
+            factorize_result = pd.factorize(X.iloc[:,column])
+            X.iloc[:,column] = factorize_result[0].astype('int64')
+            factorize_unique[column] = factorize_result[1]
+
+
         self.data = X.values
-        self.types = np.array([1 if x in categorical else 0 for x in range(self.data.shape[1])])
+
         if self.gamma is None:
             self.gamma = mean_std(self.data, self.types)/2
         outputs = Parallel(n_jobs=self.n_jobs)(delayed(self.predict)() for _ in range(self.n_init))
         costs = [x[3] for x in outputs]
         min_index = np.argmin(np.asarray(costs))
         self.labels_ = outputs[min_index][0]
-        self.cluster_centroids_ = outputs[min_index][1]
+        self.cluster_centroids_numerical_ = outputs[min_index][1]
         self.n_iter_ = outputs[min_index][2]
         self.cost_ = outputs[min_index][3]
+        self.cluster_centroids_ = self.cluster_centroids_numerical_.tolist()
+        for j in categorical:
+            for i in range(self.n_clusters):
+                self.cluster_centroids_[i][j] = factorize_unique[j][int(self.cluster_centroids_[i][j])]
