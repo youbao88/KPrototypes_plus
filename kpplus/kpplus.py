@@ -215,6 +215,16 @@ class KPrototypes_plus:
     '''
 
     def __init__(self, n_clusters, n_init, gamma = None, n_jobs=-1):
+
+        if not isinstance(n_clusters, int):
+            raise TypeError('An value of type int is expected for n_clusters, not %s'%type(n_clusters))
+        if not isinstance(n_init, int):
+            raise TypeError('An value of type int is expected for n_init, not %s'%type(n_init))
+        if gamma and not isinstance(gamma, (int,float)):
+            raise TypeError('An value of type int or float is expected for gamma, not %s'%type(gamma))
+        if not isinstance(n_jobs, int):
+            raise TypeError('An value of type int or float is expected for n_jobs, not %s'%type(n_jobs))
+
         self.n_clusters = n_clusters
         self.n_init = n_init
         self.gamma = gamma
@@ -230,6 +240,12 @@ class KPrototypes_plus:
         return output
 
     def fit_predict(self, X, categorical):
+
+        if not isinstance(X, pd.DataFrame):
+            raise TypeError('An value of type pd.DataFrame is expected for X, not %s'%type(X))
+        if not isinstance(categorical, list):
+            raise TypeError('An value of type List is expected for categorical, not %s'%type(categorical))
+        
         self.types = np.array([1 if x in categorical else 0 for x in range(X.shape[1])])
 
         #Factorize categorical data:
